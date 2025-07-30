@@ -289,10 +289,10 @@ const Nav = () => {
                   <a className="a" href="/core" data-img="/img/community/P34.jpeg">Core</a>
                 </div>
                 <div className="link">
-                  <a className="a" href="#" data-img="/img/road/P1.jpeg">Progress</a>
+                  <a className="a" href="/gallery" data-img="/img/road/P1.jpeg">Progress</a>
                 </div>
                 <div className="link">
-                  <a className="a" href="#" data-img="/img/water/P31.jpeg">Connect</a>
+                  <a className="a" href="/connect" data-img="/img/water/P31.jpeg">Connect</a>
                 </div>
               </div>
               <div className="menu-socials">
@@ -303,7 +303,10 @@ const Nav = () => {
           </div>
           <div className="menu-footer">
             <div className="col-lg">
-              <a className="a" href="#">Run Sequence</a>
+              <a className="a" href=" " onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}>Run Sequence</a>
             </div>
             <div className="col-sm">
               <a className="a" href="#">Origin</a>

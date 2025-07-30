@@ -1,0 +1,66 @@
+/* Using CSS Modules scopes these styles to the ScrollingGallery component */
+
+.wrapper {
+  /* This class wraps the entire component */
+  width: 100%;
+  position: relative;
+}
+
+.title { 
+    font-size: 14rem; 
+    font-family: 'Bebas Neue', sans-serif; /* Added a fallback font */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    margin: 0;
+    color: white;
+    pointer-events: none; /* Allows clicking through the text */
+}
+
+/* Base styles for sections */
+.linesSection, .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+}
+
+.linesSection {
+  height: 100vh;
+}
+
+.gallery {
+    /* The total height will be determined by the content and scroll animation */
+    height: 200vh;
+}
+
+.endSection {
+  height: 100vh; /* Provides space at the end of the scroll */
+}
+
+.image {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* The pseudo-element creates the vertical line overlay on each image column */
+.image::before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    border-right: 1px solid black;
+}
+
+.line {
+    border-right: 1px solid black;
+    height: 100%;
+}
