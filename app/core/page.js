@@ -4,21 +4,26 @@
 import Link from "next/link"; // Import the Link component for navigation
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import TiltedCard from "../components/Components/TiltedCard/TiltedCard";
+import SmoothScroller from "../components/SmoothScroller";
+import Nav from "../components/Nav";
 
 export default function CorePage() {
   return (
     <main>
-      <Nav /> {/* Include the Nav component for navigation */}
-      <CoreContent />
+      <SmoothScroller>
+        <Nav />
+        {/* Render the navigation */}
+       <CoreContent />
       {/* Render the core content */}
       <BackgroundContent />
       {/* Render the background content */}
       <Footer />
       {/* Render the background content */}
-    </main>
+
+      </SmoothScroller>    
+      </main>
   );
 }
 //<Link href="/" style={{ color: 'blue', textDecoration: 'underline' }}> Go back to Home </Link>

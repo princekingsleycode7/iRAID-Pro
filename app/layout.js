@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Plus_Jakarta_Sans } from 'next/font/google';
+import './globals.css'; // Your global styles
+
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: "Integrated Rural Aid",
@@ -18,7 +20,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" />
       </head>
-      <body className={inter.className}>
+      <body className={jakarta.className}>
         {children}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

@@ -306,11 +306,12 @@ const Nav = () => {
               <a className="a" href=" " onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}>Run Sequence</a>
+              }} >Run Sequence</a>
             </div>
             <div className="col-sm">
               <a className="a" href="#">Origin</a>
               <a className="a" href="#">Join Signal</a>
+              <p className="p" id="menu-close">close</p>
             </div>
           </div>
         </div>

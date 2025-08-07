@@ -1,0 +1,648 @@
+/* /app/gallery/styles/Gallery.module.css */
+
+/* --- GLOBAL STYLES TO MOVE --- */
+/* These styles using '*' or 'body' do not belong in a CSS module. */
+/* MOVE these to your top-level /app/globals.css file! */
+/*
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #ffffff;
+    font-family: sans-serif;
+    min-height: 100vh;
+  }
+*/
+/* --- END OF GLOBAL STYLES TO MOVE --- */
+
+
+/* Wrapper for the entire page content */
+.pageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 90px 0px;
+}
+
+/* Header Section */
+.header {
+    width: 100%;
+}
+
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.leftPanel {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.headerText {
+    /* This class is for the container of the h1 and p */
+}
+
+.headerTitle { /* Was .header-text h1 */
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.headerSubtitle { /* Was .header-text p */
+    font-size: 1.1rem;
+    color: #3d3d4e;
+    max-width: 450px;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Controls: Tabs, Search, Tags */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0px 0px 25px 0px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tab.active {
+    background-color: #0d0c22;
+    color: #ffffff;
+}
+
+.tab:not(.active) {
+    background-color: transparent;
+    color: #3d3d4e;
+}
+
+.tab:not(.active):hover {
+    background-color: #f3f3f4;
+}
+
+.tabIcon { /* Was .tab svg */
+    width: 18px;
+    height: 18px;
+}
+
+.searchContainer {
+    position: relative;
+    width: 100%;
+}
+
+.searchInput { /* Was .search-container input */
+    width: 100%;
+    padding: 1.2rem 4rem 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #f3f3f4;
+    border-radius: 9999px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.searchInput::placeholder {
+    color: #6e6d7a;
+}
+
+.searchBtn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background-color: #ea4c89;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -12px;
+}
+
+.popularTags {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.popularTags span {
+    font-weight: 500;
+    color: #0d0c22;
+}
+
+.popularTags a {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e7e7e9;
+    border-radius: 9999px;
+    text-decoration: none;
+    color: #3d3d4e;
+    transition: border-color 0.2s;
+}
+
+.popularTags a:hover {
+    border-color: #dbdbde;
+}
+
+/* Right Panel: Illustration */
+.rightPanel {
+    flex-basis: 50%;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.mainIllustration {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+}
+
+.artistCredit {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 12px 6px 6px;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.artistAvatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+/* Main Navigation Bar */
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e7e7e9;
+    padding-top: 1.5rem;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.followingBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #0d0c22;
+    border: 1px solid #e7e7e9;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.5rem;
+    white-space: nowrap;
+}
+
+.navLinks a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6e6d7a;
+    transition: color 0.2s;
+}
+
+.navLinks a:hover {
+    color: #0d0c22;
+}
+
+.navLinks a.activeLink {
+    color: #0d0c22;
+    font-weight: 700;
+}
+
+.navArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to right, transparent, white 50%);
+    position: absolute;
+    right: 20%;
+    color: #6e6d7a;
+}
+
+.filtersBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #0d0c22;
+    border: 1px solid #e7e7e9;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.filtersBtn svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/*
+========================================
+Project Gallery Container - Responsive Grid
+========================================
+*/
+
+.projectGalleryContainer {
+  width: 100%; 
+  max-width: 1440px; 
+  margin: 2rem 0; 
+  display: grid; 
+  justify-content: space-between;
+  grid-template-columns: 1fr; 
+  gap: 2rem; 
+}
+
+/* --- TABLET STYLES (2 columns) --- */
+@media (min-width: 768px) {
+  .projectGalleryContainer {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* --- DESKTOP STYLES (3 columns) --- */
+@media (min-width: 1024px) {
+  .projectGalleryContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card Container Styling */
+.projectCard {
+    position: relative;
+    width: 100%; 
+    height: 400px; 
+    background-color: #3d3c3d;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+}
+
+/* Background Glow Effect on Hover */
+.projectCard::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -150%;
+    width: 200px;
+    height: 200px;
+    background-color: #9b6b43; 
+    filter: blur(60px);
+    z-index: 1;
+    transition: left 0.7s ease-in-out;
+}
+
+.projectCard:hover::before {
+    left: -25%;
+}
+
+/* Main Content Wrapper */
+.cardContent {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: #323132;
+    border-radius: 0.875rem; 
+    margin: 0.25rem;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Wrapper */
+.cardImageWrapper {
+    width: 100%;
+    /* height is now controlled by animation and hover */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: height 0.5s ease; /* changed from moveup animation */
+}
+
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.projectCard:hover .cardImage {
+    transform: scale(1.1);
+}
+
+.projectCard .cardImageWrapper {
+    height: 0px;
+    transform: scale(0.99);
+}
+.projectCard:hover .cardImageWrapper {
+    height: 55%;
+    transform: scale(1);
+}
+
+
+/* Text & Info Section */
+.cardInfo {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    height: auto;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.cardSubtitle {
+    font-size: 1rem;
+    color: #b0b0b0;
+}
+
+/* Slide-up Description Panel */
+.cardDescription {
+    position: absolute;
+    bottom: -100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #323132;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: bottom 0.4s ease-in-out;
+}
+
+.projectCard:hover .cardDescription {
+    bottom: 0; 
+}
+
+.descriptionText {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #e0e0e0;
+}
+
+/* "Learn More" Button */
+.learnMoreBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.learnMoreBtn svg {
+    width: 24px;
+    height: 24px;
+    transform: translateX(-8px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.projectCard:hover .learnMoreBtn svg {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .pageWrapper {
+        padding: 1rem;
+    }
+
+    .container {
+        margin-top: 10px;
+        padding: 2rem 0;
+    }
+    
+    .mainContent {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .leftPanel, .rightPanel {
+        flex-basis: 100%;
+        width: 100%;
+    }
+    
+    .headerTitle {
+        font-size: 2.25rem;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+
+    .headerSubtitle {
+        font-size: 1rem;
+        max-width: 100%;
+        text-align: center;
+        margin: 1rem auto 0;
+    }
+    
+    .tabs {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .tab {
+        padding: 0.65rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .tabIcon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .searchInput {
+        padding: 1rem 3.5rem 1rem 1.25rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .searchBtn {
+        width: 40px;
+        height: 40px;
+        right: 6px;
+    }
+    
+    .popularTags {
+        display: none;
+    }
+    
+    .imageWrapper {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    .artistCredit {
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.85rem;
+    }
+
+    .artistAvatar {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .mainNav {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+        padding-top: 2rem;
+    }
+
+    .navLeft {
+        flex-direction: column;
+        gap: 1.5rem;
+        overflow: visible;
+    }
+
+    .followingBtn {
+        align-self: center;
+        order: 2;
+    }
+
+    .navLinks {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        order: 1;
+    }
+
+    .navLinks a {
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+    }
+
+    .navArrow {
+        display: none;
+    }
+
+    .filtersBtn {
+        align-self: center;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pageWrapper {
+        padding: 0.75rem;
+    }
+
+    .headerTitle {
+        font-size: 2rem;
+    }
+
+    .headerSubtitle {
+        font-size: 0.95rem;
+    }
+
+    .tab {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .searchInput {
+        padding: 0.9rem 3.25rem 0.9rem 1.1rem;
+        font-size: 0.95rem;
+    }
+
+    .searchBtn {
+        width: 36px;
+        height: 36px;                
+        margin-top: -12px;
+    }
+
+    .navLinks {
+        gap: 0.75rem;
+    }
+
+    .navLinks a {
+        font-size: 0.9rem;
+    }
+}
