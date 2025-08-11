@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import gsap from "gsap";
+import Image from 'next/image';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Timeline = () => {
@@ -71,7 +72,7 @@ const Timeline = () => {
               </div>
               <div className="timeline-section__image-wrapper">
                 <div className="timeline-section__placeholder-image">
-                  <img src="/img/signPost/P21.jpeg" />
+                  <Image alt="description" src="/img/signPost/P21.jpeg" />
                 </div>
               </div>
             </div>
@@ -93,7 +94,7 @@ const Timeline = () => {
               </div>
               <div className="timeline-section__image-wrapper">
                 <div className="timeline-section__placeholder-image">
-                  <img src="/img/signPost/P59.jpeg" />
+                  <Image alt="description" src="/img/signPost/P59.jpeg" />
                 </div>
               </div>
             </div>
@@ -115,7 +116,7 @@ const Timeline = () => {
               </div>
               <div className="timeline-section__image-wrapper">
                 <div className="timeline-section__placeholder-image">
-                  <img src="/img/signPost/P55.jpeg" />
+                  <Image alt="description" src="/img/signPost/P55.jpeg" />
                 </div>
               </div>
             </div>

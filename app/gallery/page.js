@@ -2,6 +2,8 @@
 
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
+
 // Correct the import path based on your file structure.
 // This path assumes `page.js` is in /app/gallery/ and the css is in /app/gallery/styles/
 import styles from './styles/Gallery.module.css';
@@ -58,9 +60,9 @@ const GalleryPage = () => {
                   </div>
                   <div className={styles.popularTags}>
                     <span>Popular:</span>
-                    <a href="#">Clean Water</a>
-                    <a href="#">Women's Empowerment</a>
-                    <a href="#">Education</a>
+                    <Link href="#">Clean Water</Link>
+                    <Link href="#">Women&apos;s Empowerment</Link>
+                    <Link href="#">Education</Link>
                   </div>
                 </div>
               </div>

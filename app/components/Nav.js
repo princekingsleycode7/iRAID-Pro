@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
+import Image from 'next/image';
 
 const Nav = () => {
   // State to control the nav's appearance based on background color
@@ -353,9 +354,9 @@ useEffect(() => {
     <>
       <nav className={navColorMode === "dark" ? "over-dark" : "over-light"}>
         <div className="logo">
-          <a href="/" className="a logor" style={{ letterSpacing: "2px" }} href="#">
+          <Link href="/" className="a logor" style={{ letterSpacing: "2px" }}>
             <span className="i">I</span>RAID
-          </a>
+          </Link>
         </div>
         <div className="menu-toggle">
           <p className="p" id="menu-open">
@@ -372,7 +373,7 @@ useEffect(() => {
           <div className="menu-items">
             <div className="col-lg">
               <div className="menu-preview-img">
-                <img
+                <Image
                   className="navimg"
                   src="/img/agric/P40.jpeg"
                   alt="Preview Image 1"
@@ -382,51 +383,51 @@ useEffect(() => {
             <div className="col-sm">
               <div className="menu-links">
                 <div className="link">
-                  <a className="a" href="#" data-img="/img/building/P57.jpeg">
+                  <Link className="a" href="#" data-img="/img/building/P57.jpeg">
                     Visions
-                  </a>
+                  </Link>
                 </div>
                 <div className="link">
-                  <a
+                  <Link
                     className="a"
                     href="/core"
                     data-img="/img/community/P34.jpeg"
                   >
                     Core
-                  </a>
+                  </Link>
                 </div>
                 <div className="link">
-                  <a className="a" href="/gallery" data-img="/img/road/P1.jpeg">
+                  <Link className="a" href="/gallery" data-img="/img/road/P1.jpeg">
                     Progress
-                  </a>
+                  </Link>
                 </div>
                 <div className="link">
-                  <a
+                  <Link
                     className="a"
                     href="/connect"
                     data-img="/img/water/P31.jpeg"
                   >
                     Connect
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="menu-socials">
                 <div className="social">
-                  <a className="a" href="#">
+                  <Link className="a" href="#">
                     TikTok
-                  </a>
+                  </Link>
                 </div>
                 <div className="social">
-                  <a className="a" href="#">
+                  <Link className="a" href="#">
                     Instagram
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="menu-footer">
             <div className="col-lg">
-              <a
+              <Link
                 className="a"
                 href="/"
                 onClick={(e) => {
@@ -435,15 +436,15 @@ useEffect(() => {
                 }}
               >
                 Run Sequence
-              </a>
+              </Link>
             </div>
             <div className="col-sm">
-              <a className="a" href="#">
+              <Link className="a" href="#">
                 Origin
-              </a>
-              <a className="a" href="#">
+              </Link>
+              <Link className="a" href="#">
                 Join Signal
-              </a>
+              </Link>
             </div>
           </div>
         </div>

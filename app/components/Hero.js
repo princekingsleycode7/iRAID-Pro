@@ -300,7 +300,7 @@ const Hero = () => {
         <span className="text-segment">we unlock potential.</span>
         <div className="placeholder-icon"></div>
         <span className="text-segment">
-          Since 2001, we've been walking alongside rural communities in Nigeria,
+          Since 2001, we&apos;ve been walking alongside rural communities in Nigeria,
         </span>
         <div className="placeholder-icon"></div>
         <span className="text-segment">helping them transform water, education,</span>

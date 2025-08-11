@@ -1,4 +1,6 @@
 import React from "react";
+import Link from 'next/link';
+
 
 const Footer = () => {
   return (
@@ -24,29 +26,29 @@ const Footer = () => {
               <h3 className="site-footer__column-title">Get Involved</h3>
               <ul className="site-footer__link-list">
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     Our Impact
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     Donate Now
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     Volunteer With Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     Events Calendar
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -54,41 +56,41 @@ const Footer = () => {
               <h3 className="site-footer__column-title">Success Stories</h3>
               <ul className="site-footer__link-list">
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     Join Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     News Updates
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="site-footer__link">
+                  <Link href="#" className="site-footer__link">
                     FAQs
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="site-footer__column">
               <div className="site-footer__social-links">
-                <a href="#" className="site-footer__social-icon">
+                <Link href="#" className="site-footer__social-icon">
                   <i data-lucide="facebook" width="20" height="20"></i>
-                </a>
-                <a href="#" className="site-footer__social-icon">
+                </Link>
+                <Link href="#" className="site-footer__social-icon">
                   <i data-lucide="instagram" width="20" height="20"></i>
-                </a>
-                <a href="#" className="site-footer__social-icon">
+                </Link>
+                <Link href="#" className="site-footer__social-icon">
                   <i data-lucide="twitter" width="20" height="20"></i>
-                </a>
-                <a href="#" className="site-footer__social-icon">
+                </Link>
+                <Link href="#" className="site-footer__social-icon">
                   <i data-lucide="youtube" width="20" height="20"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -98,25 +100,25 @@ const Footer = () => {
             </p>
             <p>
               Made with <span className="site-footer__heart" style={{ color: "red" }}>♥</span> by{" "}
-              <a
+              <Link
                 href="https://digiking.com.ng"
                 target="_blank"
                 rel="noopener"
                 className="site-footer__link"
               >
                 CETF - DIGIKING
-              </a>
+              </Link>
             </p>
             <div className="site-footer__legal-links">
-              <a href="#" className="site-footer__legal-link">
+              <Link href="#" className="site-footer__legal-link">
                 Privacy Policy
-              </a>
-              <a href="#" className="site-footer__legal-link">
+              </Link>
+              <Link href="#" className="site-footer__legal-link">
                 Terms of Service
-              </a>
-              <a href="#" className="site-footer__legal-link">
+              </Link>
+              <Link href="#" className="site-footer__legal-link">
                 Cookie Settings
-              </a>
+              </Link>
             </div>
           </div>
         </div>

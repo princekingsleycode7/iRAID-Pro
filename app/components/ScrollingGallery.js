@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import gsap from "gsap";
+import Image from 'next/image';
 
 const ScrollingGallery = () => {
   useEffect(() => {
@@ -53,53 +54,53 @@ const ScrollingGallery = () => {
       <div className="scrolling-gallery__background">
         <div className="scrolling-gallery__row" id="gallery-row-1">
           <div className="scrolling-gallery__item">
-            <img src="/img/agric/P12.jpeg" alt="UI Element 2" />
+            <Image src="/img/agric/P12.jpeg" alt="UI Element 2" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/building/P54.jpeg" alt="UI Element 3" />
+            <Image src="/img/building/P54.jpeg" alt="UI Element 3" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/community/P25.jpeg" alt="UI Element 4" />
+            <Image src="/img/community/P25.jpeg" alt="UI Element 4" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img//road/P3.jpeg" alt="UI Element 5" />
+            <Image src="/img//road/P3.jpeg" alt="UI Element 5" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/water/P38.jpeg" alt="UI Element 6" />
+            <Image src="/img/water/P38.jpeg" alt="UI Element 6" />
           </div>
         </div>
         <div className="scrolling-gallery__row" id="gallery-row-2">
           <div className="scrolling-gallery__item">
-            <img src="/img/agric/P12.jpeg" alt="Code Element 1" />
+            <Image src="/img/agric/P12.jpeg" alt="Code Element 1" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/building/P54.jpeg" alt="Code Element 2" />
+            <Image src="/img/building/P54.jpeg" alt="Code Element 2" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/community/P25.jpeg" alt="Code Element 3" />
+            <Image src="/img/community/P25.jpeg" alt="Code Element 3" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/road/P3.jpeg" alt="Code Element 4" />
+            <Image src="/img/road/P3.jpeg" alt="Code Element 4" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/water/P38.jpeg" alt="Code Element 5" />
+            <Image src="/img/water/P38.jpeg" alt="Code Element 5" />
           </div>
         </div>
         <div className="scrolling-gallery__row" id="gallery-row-3">
           <div className="scrolling-gallery__item">
-            <img src="/img/water/P48.jpeg" alt="3D Render 1" />
+            <Image src="/img/water/P48.jpeg" alt="3D Render 1" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/water/P51.jpeg" alt="3D Render 3" />
+            <Image src="/img/water/P51.jpeg" alt="3D Render 3" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/signPost/P15.jpeg" alt="3D Render 4" />
+            <Image src="/img/signPost/P15.jpeg" alt="3D Render 4" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/agric/P40.jpeg" alt="3D Render 5" />
+            <Image src="/img/agric/P40.jpeg" alt="3D Render 5" />
           </div>
           <div className="scrolling-gallery__item">
-            <img src="/img/community/P28.jpeg" alt="3D Render 6" />
+            <Image src="/img/community/P28.jpeg" alt="3D Render 6" />
           </div>
         </div>
       </div>

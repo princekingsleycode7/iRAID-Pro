@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import TiltedCard from "../components/Components/TiltedCard/TiltedCard";
 import SmoothScroller from "../components/SmoothScroller";
 import Nav from "../components/Nav";
+import Image from 'next/image';
 
 export default function CorePage() {
   return (
@@ -34,7 +35,7 @@ export default function CorePage() {
 const CoreContent = () => (
   <section className="core-content">
     <div className="container">
-      <img
+      <Image
         src="/img/about/blurbg.png"
         className="background-video"
         alt="core page background image"
@@ -43,7 +44,7 @@ const CoreContent = () => (
     <div className="container-content">
       <div className="left">
         <div className="outline">
-          <p className="core-text">At The Core, There's Community</p>
+          <p className="core-text">At The Core, There&apos;s Community</p>
           <h1 className="core-title">
             PEOPLE
             <br />
@@ -62,7 +63,7 @@ const CoreContent = () => (
         </div>
       </div>
       <div className="right">
-        <img
+        <Image
           src="/img/about/rightimg.png"
           alt="Core Image"
           className="core-image"

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 const BlogSection = () => {
   return (
@@ -15,7 +16,7 @@ const BlogSection = () => {
           <article className="blog-section__post">
             <div className="blog-section__post-image-wrapper">
               <div className="blog-section__post-placeholder">
-                <img src="/img/bg.png" alt="Blog post image" />
+                <Image src="/img/bg.png" alt="Blog post image" />
               </div>
             </div>
             <div className="blog-section__post-content">
@@ -29,7 +30,7 @@ const BlogSection = () => {
               </p>
               <div className="blog-section__author-info">
                 <div className="blog-section__author-avatar">
-                       <img className="blog-section__author-avatar" src="https://randomuser.me/api/portraits/men/68.jpg"></img>
+                       <Image alt="description" className="blog-section__author-avatar" src="https://randomuser.me/api/portraits/men/68.jpg"/>
                 </div>
                 <div>
                   <p className="blog-section__author-name">Jane Doe</p>
@@ -41,7 +42,7 @@ const BlogSection = () => {
           <article className="blog-section__post">
             <div className="blog-section__post-image-wrapper">
               <div className="blog-section__post-placeholder">
-                <img src="/img/family.jpg" alt="Blog post image" />
+                <Image src="/img/family.jpg" alt="Blog post image" />
               </div>
             </div>
             <div className="blog-section__post-content">
@@ -55,7 +56,7 @@ const BlogSection = () => {
               </p>
               <div className="blog-section__author-info">
                 <div className="blog-section__author-avatar">
-                  <img className="blog-section__author-avatar" src="https://randomuser.me/api/portraits/men/8.jpg"></img>
+                  <Image alt="description" className="blog-section__author-avatar" src="https://randomuser.me/api/portraits/men/8.jpg"/>
                 </div>
                 <div>
                   <p className="blog-section__author-name">John Smith</p>
@@ -67,20 +68,20 @@ const BlogSection = () => {
           <article className="blog-section__post">
             <div className="blog-section__post-image-wrapper">
               <div className="blog-section__post-placeholder">
-                <img src="/img/farmer.jpg" alt="Blog post image" />
+                <Image src="/img/farmer.jpg" alt="Blog post image" />
               </div>
             </div>
             <div className="blog-section__post-content">
               <span className="blog-section__post-category">Impact</span>
               <h3 className="blog-section__post-title">
-                Celebrating Our Volunteers' Contributions
+                Celebrating Our Volunteers&apos;s Contributions
               </h3>
               <p className="blog-section__post-excerpt">
                 Join us in recognizing the dedication of our amazing volunteers.
               </p>
               <div className="blog-section__author-info">
                 <div className="blog-section__author-avatar">
-                  <img className="blog-section__author-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Author Avatar"></img>
+                  <Image className="blog-section__author-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Author Avatar"/>
                 </div>
                 <div>
                   <p className="blog-section__author-name">Emily White</p>
