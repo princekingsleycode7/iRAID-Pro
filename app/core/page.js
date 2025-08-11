@@ -13,7 +13,10 @@ export default function CorePage() {
   return (
     <main>
       <SmoothScroller>
-        <Nav />
+      
+          <Nav />
+    
+        
         {/* Render the navigation */}
        <CoreContent />
       {/* Render the core content */}

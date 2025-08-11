@@ -1882,3 +1882,8 @@ nav.over-light .menu-toggle p {
   color:rgb(66, 20, 235);
 }
 
+
+.sticky-nav-over-everything{
+  z-index: 1000;
+  position: sticky;
+}
