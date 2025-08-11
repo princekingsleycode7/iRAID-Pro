@@ -181,7 +181,7 @@ body {
 }
 
 .p2 {
-  position: relative;
+  position: absolute;
   text-decoration: none;
   color: white;
   font-size: 1rem;
@@ -204,7 +204,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 20;
+  z-index: 2000;
 }
 
 nav .logo a {
@@ -1886,4 +1886,27 @@ nav.over-light .menu-toggle p {
 .sticky-nav-over-everything{
   z-index: 1000;
   position: sticky;
+}
+
+.menu-close-btn {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none; /* prevents clicks when hidden */
+  transition: opacity 0.3s ease;
+  z-index: 2000; /* make sure it's above menu content */
+  color: #f1f1f1;
+}
+
+
+nav {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+nav.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
 }
