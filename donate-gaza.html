@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html lang="en-us" class="ie10 ie9 ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en-us" class="ie10 ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-us"> <!--<![endif]-->
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Donate for Gaza | Dubai Cares</title>
+    <meta name="description"
+        content="Join us in rebuilding lives in Gaza. Help us turn hope into reality, one family, one child, one life at a time." />
+    <meta name="keywords" content="Gaza, Donate, Charity, Dubai Cares, Rebuild, Hope" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="shortcut icon" href="files/6215/2448/9338/faviocn.png" type="image/x-icon" />
+    <link rel="icon" href="files/6215/2448/9338/faviocn.png" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="concrete/css/ccm.base.css" />
+    <script type="text/javascript" src="concrete/js/jquery.js"></script>
+    <script type="text/javascript" src="concrete/js/ccm.base.js"></script>
+    <link rel="stylesheet" type="text/css" href="themes/dubaicares/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="themes/dubaicares/css/print.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .gaza-hero h1,
+        .gaza-text h2,
+        .impact-item strong {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .gaza-hero {
+            background-image: url('themes/dubaicares/images/gaza/1.jpg');
+            background-size: cover;
+            background-position: top center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            padding-top: 20vh;
+        }
+
+        .gaza-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .gaza-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .gaza-hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .gaza-hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
+
+        .gaza-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .gaza-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gaza-text h2 {
+            color: #d32f2f;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        .gaza-highlight {
+            background: #fff5f5;
+            padding: 40px;
+            border-left: 6px solid #d32f2f;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .gaza-btn {
+            display: inline-block;
+            background: #d32f2f;
+            color: white !important;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .gaza-btn:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .gaza-media {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .gaza-media img,
+        .gaza-media video {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .impact-item {
+            background: #fff;
+            padding: 40px 30px;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            box-shadow: none;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px);
+            border-color: #d32f2f;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .impact-item strong {
+            display: block;
+            font-size: 1.4em;
+            color: #d32f2f;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .container {
+            padding: 0 20px;
+        }
+
+        /* Video specific responsive styles */
+        .gaza-media {
+            position: relative;
+        }
+
+        .gaza-video-container video {
+            width: auto;
+            max-width: 100%;
+            max-height: 85vh;
+            /* Keep it within screen height on desktop */
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .gaza-video-container {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                margin-right: calc(-50vw + 50%);
+                border-radius: 0;
+            }
+
+            .gaza-video-container video {
+                width: 100%;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="home-page home">
+    <div class="wrapper">
+        <div class="header__wrap">
+            <header class="header ">
+                <div class="header__logo__new">
+                    <div class="logo-video">
+                        <a class="image" href="https://www.almaktouminitiatives.org/en" target="_blank">
+                            <img src="themes/dubaicares/images/mbrgi.png" alt="Dubai Cares" />
+                        </a>
+                        <a class="image dc" href="index.html">
+                            <img src="themes/dubaicares/images/logo-new-2.png" alt="Dubai Cares" />
+                        </a>
+                    </div>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__nav header__nav--static">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about/index.html">About</a></li>
+                        <li><a href="supports-us/donate/index.html">Donate</a></li>
+                        <li><a href="supports-us/volunteering-opportunities/index.html">Volunteer</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <main class="main">
+            <div class="gaza-hero">
+                <div class="gaza-hero-content">
+                    <div class="fomo-counter-badge">
+                        <span class="fomo-live-dot"></span>
+                        <span class="fomo-counter-value">...</span> people donated recently
+                    </div>
+                    <h1>Hope in the Rubble: Building Tomorrow, Today</h1>
+                    <p>The images we've all seen are devastating. But what the world doesn't see enough are the people
+                        who wake up each day amid the rubble and ask a simple question: <em>How do we rebuild?</em></p>
+
+                    <a href="onboarding.html"
+                         class="gaza-btn">Donate Now</a>
+                </div>
+            </div>
+
+            <section class="gaza-section">
+                <div class="container">
+                    <div class="gaza-text">
+                        <div class="fomo-urgency-bar" style="margin-bottom: 30px; border-radius: 4px;">
+                            <span class="fomo-live-dot"></span>
+                            <span class="fomo-viewers-value">...</span> people are viewing this page right now
+                        </div>
+                        <p>We are a group of everyday people from around the world who decided we couldn't just watch
+                            anymore. We're not politicians. We're not a big organization with red tape and bureaucracy.
+                            We're doctors, engineers, students, parents, and professionals who believe that when people
+                            suffer, borders and politics shouldn't stop us from helping.</p>
+
+                        <h2>What We've Done So Far</h2>
+                        <p>Over the past months, our network has moved $1.2 million directly into Gaza. This isn't money
+                            sitting in bank accounts or tied up in administrative costs. This is:</p>
+
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <strong>Heavy machinery</strong>
+                                clearing rubble so families can start to rebuild
+                            </div>
+                            <div class="impact-item">
+                                <strong>Medical supplies</strong>
+                                reaching doctors who are performing miracles with almost nothing
+                            </div>
+                            <div class="impact-item">
+                                <strong>Food and clean water</strong>
+                                for families who've lost everything
+                            </div>
+                            <div class="impact-item">
+                                <strong>Internet access</strong>
+                                so children can continue learning and families can stay connected
+                            </div>
+                            <div class="impact-item">
+                                <strong>Healthcare professionals</strong>
+                                on the ground providing both physical and mental health support
+                            </div>
+                        </div>
+
+                        <div class="fomo-recent-list" style="margin: 40px 0;">
+                            <h4>Recent Donations</h4>
+                            <div class="fomo-list-container">
+                                <div class="fomo-list-items">
+                                    <!-- Items injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gaza-media gaza-video-container">
+                            <video controls poster="themes/dubaicares/images/gaza/2.jpg">
+                                <source src="themes/dubaicares/images/gaza/01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                        <h2>The Reality We Face</h2>
+                        <p>$1.2 million sounds like a lot. But when you're trying to help hundreds of thousands of
+                            people who've lost their homes, their livelihoods, and their loved ones, it's just a
+                            beginning. It's a dent in an ocean of need.</p>
+                        <p>The mental health crisis alone is staggering. Children who can't sleep because of nightmares.
+                            Parents grappling with impossible grief. Entire communities dealing with trauma on a scale
+                            most of us will never understand.</p>
+                        <p>The physical destruction is overwhelming. Homes reduced to concrete and dust. Hospitals
+                            struggling to function. Schools that no longer exist. Infrastructure that will take years to
+                            rebuild.</p>
+
+                        <div class="gaza-media">
+                            <img src="themes/dubaicares/images/gaza/3.jpg" alt="Destruction in Gaza">
+                        </div>
+
+                        <h2>Why We're Different</h2>
+                        <p>We're completely decentralized—no single government, no religious agenda, no corporate
+                            interests. Just people helping people. Our 200+ donors remain anonymous by choice, united
+                            only by the belief that human suffering demands human response.</p>
+                        <p>One of our largest supporters is a prince in Dubai who believes, as we do, that wealth means
+                            nothing if it doesn't serve those in need. His generosity, combined with contributions from
+                            everyday people giving $20 or $2,000, creates something powerful: a movement that can't be
+                            stopped by politics.</p>
+
+                        <div class="gaza-highlight">
+                            <h3>Our Ask Is Simple</h3>
+                            <p>We need to scale this impact. We need to turn $1.2 million into $5 million, then $10
+                                million. Not because we want big numbers, but because:</p>
+                            <ul>
+                                <li>Every <strong>$500</strong> provides a family with food for a month</li>
+                                <li>Every <strong>$2,000</strong> clears rubble from a family's destroyed home</li>
+                                <li>Every <strong>$10,000</strong> brings in medical supplies that save lives</li>
+                                <li>Every <strong>$50,000</strong> funds mental health support for hundreds of children
+                                </li>
+                            </ul>
+                            <div style="text-align: center;">
+                                <a href="onboarding.html"
+                                     class="gaza-btn">Donate Now</a>
+                            </div>
+                        </div>
+
+                        <h2>You Can Be Part of This</h2>
+                        <p>Whether you can give $10 or $10,000, you're not just donating to a cause. You're directly
+                            funding recovery. You're putting food in a child's hands. You're giving a doctor the tools
+                            to save a life. You're helping a family clear the rubble and start again.</p>
+                        <p>If you prefer to remain anonymous, we understand and respect that completely. If you want to
+                            contribute cryptocurrency for speed and transparency, we've made that simple. If you want to
+                            use traditional methods, we've got that covered too.</p>
+
+                        <h2>The Bottom Line</h2>
+                        <p>While the world debates and governments posture, people in Gaza are suffering today. Right
+                            now. This moment.</p>
+                        <p>We can't wait for perfect solutions. We can't wait for politics to sort itself out. We can
+                            help now, and every day we delay, the suffering continues.</p>
+                        <p>This isn't about taking sides. This is about being human. It's about seeing suffering and
+                            refusing to look away.</p>
+                        <p>Join us. Help us turn hope into reality, one family, one child, one life at a time.</p>
+
+                        <div style="text-align: center; margin-top: 40px;">
+                            <a href="onboarding.html"
+                                 class="gaza-btn">Donate Now</a>
+                        </div>
+
+                        <hr style="margin: 40px 0; border-top: 1px solid #eee;">
+                        <p><em>For more information on how to contribute or get involved, reach out to us. Every
+                                contribution, no matter the size, makes a direct impact on the ground.</em></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="push"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__container footer__widget-area">
+            <div class="row">
+                <div class="footer__widget">
+                    <div class="content">
+                        <ul class="nav nav--large">
+                            <li><a href="programs.html">Our Programs</a></li>
+                            <li><a href="initiatives.html">Initiatives</a></li>
+                            <li><a href="supports-us.html">Support Us</a></li>
+                            <li><a href="their-stories.html">Their Stories</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__widget">
+                    <div class="content">
+                        <ul class="nav">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="supports-us/donate/index.html">Donate</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__container footer__legal">
+            <div class="footer__legal-text">&copy; Copyright 2025 Dubai Cares. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/all.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/fomo.js"></script>
+</body>
+
+</html>

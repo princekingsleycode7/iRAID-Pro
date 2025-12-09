@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Start Your Impact | Dubai Cares</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="files/6215/2448/9338/faviocn.png" type="image/x-icon" />
+    <link rel="icon" href="files/6215/2448/9338/faviocn.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="concrete/css/ccm.base.css" />
+    <script type="text/javascript" src="concrete/js/jquery.js"></script>
+    <script type="text/javascript" src="concrete/js/ccm.base.js"></script>
+    <link rel="stylesheet" type="text/css" href="themes/dubaicares/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .onboarding-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Progress Bar */
+        .progress-track {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .progress-track::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .step-dot {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+
+        .step-dot.active {
+            border-color: #d32f2f;
+            background: #d32f2f;
+            color: #fff;
+            box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.2);
+        }
+
+        .step-dot.completed {
+            border-color: #d32f2f;
+            background: #d32f2f;
+            color: #fff;
+        }
+
+        /* Cards & Sections */
+        .onboarding-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Impact Calculator */
+        .impact-calculator {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+            border-radius: 12px;
+            border: 1px solid #ffebee;
+        }
+
+        .impact-display {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .impact-highlight {
+            color: #d32f2f;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .range-slider {
+            width: 100%;
+            margin: 20px 0;
+            accent-color: #d32f2f;
+        }
+
+        /* Selection Grids */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .selection-card {
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .selection-card:hover {
+            border-color: #ffcdd2;
+            background: #fff5f5;
+        }
+
+        .selection-card.selected {
+            border-color: #d32f2f;
+            background: #fff5f5;
+            position: relative;
+        }
+
+        .selection-card.selected::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #d32f2f;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            border-color: #d32f2f;
+            outline: none;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: #d32f2f;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        /* Steps Logic */
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Trust Signals */
+        .trust-bar {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header__wrap">
+            <header class="header ">
+                <div class="header__logo__new">
+                    <div class="logo-video">
+                        <a class="image" href="https://www.almaktouminitiatives.org/en" target="_blank">
+                            <img src="themes/dubaicares/images/mbrgi.png" alt="Dubai Cares" />
+                        </a>
+                        <a class="image dc" href="index.html">
+                            <img src="themes/dubaicares/images/logo-new-2.png" alt="Dubai Cares" />
+                        </a>
+                    </div>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__nav header__nav--static">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about/index.html">About</a></li>
+                        <li><a href="supports-us/donate/index.html">Donate</a></li>
+                        <li><a href="supports-us/volunteering-opportunities/index.html">Volunteer</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="onboarding-container">
+            <!-- Progress -->
+            <div class="progress-track">
+                <div class="step-dot active" data-step="1">1</div>
+                <div class="step-dot" data-step="2">2</div>
+                <div class="step-dot" data-step="3">3</div>
+            </div>
+
+            <!-- Step 1: Impact & Amount -->
+            <div id="step1" class="step-content active">
+                <div class="onboarding-card">
+                    <h2>Choose Your Impact</h2>
+
+                    <div class="impact-calculator">
+                        <div class="impact-display">
+                            Your <span class="impact-highlight">$<span id="amount-display">50</span></span> will <br>
+                            <span id="impact-text">Feed 1 family for a month</span>
+                        </div>
+                        <input type="range" min="10" max="2000" value="50" class="range-slider" id="amount-slider">
+                    </div>
+
+                    <div class="selection-grid">
+                        <div class="selection-card selected" onclick="selectAmount(50, 'Feed 1 family for a month')">
+                            <h3>$50</h3>
+                            <p>Feed 1 family</p>
+                        </div>
+                        <div class="selection-card" onclick="selectAmount(200, 'Provide essential medical supplies')">
+                            <h3>$200</h3>
+                            <p>Medical supplies</p>
+                        </div>
+                        <div class="selection-card" onclick="selectAmount(500, 'Clear rubble from a family home')">
+                            <h3>$500</h3>
+                            <p>Rubble clearing</p>
+                        </div>
+                        <div class="selection-card" onclick="selectAmount(2000, 'Healthcare for 50 people')">
+                            <h3>$2,000</h3>
+                            <p>Healthcare for 50</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                            <input type="checkbox" style="width: 20px; height: 20px; accent-color: #d32f2f;">
+                            <span><strong>Make this monthly</strong> (Unlock impact reports & field updates)</span>
+                        </label>
+                    </div>
+
+                    <div class="trust-bar">
+                        <div class="trust-item"><i class="fas fa-shield-alt"></i> Secure Donation</div>
+                        <div class="trust-item"><i class="fas fa-check-circle"></i> Verified Impact</div>
+                        <div class="trust-item"><i class="fas fa-users"></i> 200+ Donors</div>
+                    </div>
+
+                    <button class="btn-primary" style="margin-top: 30px;" onclick="nextStep(2)">Continue to
+                        Details</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Identity -->
+            <div id="step2" class="step-content">
+                <div class="onboarding-card">
+                    <h2>How would you like to give?</h2>
+
+                    <div class="selection-grid" style="grid-template-columns: 1fr;">
+                        <div class="selection-card selected" onclick="selectIdentity('anonymous')">
+                            <div style="display: flex; align-items: center; gap: 15px; text-align: left;">
+                                <i class="fas fa-user-secret fa-2x" style="color: #666;"></i>
+                                <div>
+                                    <h3>Anonymous</h3>
+                                    <p style="margin: 0; font-size: 0.9em;">Your impact matters, not your name. Privacy
+                                        guaranteed.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="selection-card" onclick="selectIdentity('public')">
+                            <div style="display: flex; align-items: center; gap: 15px; text-align: left;">
+                                <i class="fas fa-user fa-2x" style="color: #666;"></i>
+                                <div>
+                                    <h3>Public Recognition</h3>
+                                    <p style="margin: 0; font-size: 0.9em;">Inspire others to give. Name on donor wall.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 30px;">
+                        <label>Email Address (for receipt & impact updates)</label>
+                        <input type="email" class="form-control" placeholder="your@email.com">
+                    </div>
+
+                    <button class="btn-primary" onclick="nextStep(3)">Continue to Payment</button>
+                    <button
+                        style="background: none; border: none; width: 100%; padding: 15px; margin-top: 10px; cursor: pointer; color: #666;"
+                        onclick="nextStep(1)">Back</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div id="step3" class="step-content">
+                <div class="onboarding-card">
+                    <h2>Select Payment Method</h2>
+
+                    <div class="selection-grid" style="grid-template-columns: 1fr;">
+                        <div class="selection-card" onclick="processPayment('crypto')">
+                            <div style="display: flex; align-items: center; gap: 15px; text-align: left;">
+                                <i class="fab fa-bitcoin fa-2x" style="color: #f7931a;"></i>
+                                <div>
+                                    <h3>Crypto (Instant)</h3>
+                                    <p style="margin: 0; font-size: 0.9em;">BTC, ETH, USDT. No banks, no delays.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="selection-card" onclick="processPayment('card')">
+                            <div style="display: flex; align-items: center; gap: 15px; text-align: left;">
+                                <i class="far fa-credit-card fa-2x" style="color: #1a237e;"></i>
+                                <div>
+                                    <h3>Credit / Debit Card</h3>
+                                    <p style="margin: 0; font-size: 0.9em;">Processed securely within 24hrs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trust-bar">
+                        <div class="trust-item"><i class="fas fa-lock"></i> 256-bit Encryption</div>
+                        <div class="trust-item"><i class="fas fa-globe"></i> Global Payments</div>
+                    </div>
+
+                    <button
+                        style="background: none; border: none; width: 100%; padding: 15px; margin-top: 10px; cursor: pointer; color: #666;"
+                        onclick="nextStep(2)">Back</button>
+                </div>
+            </div>
+
+            <!-- Confirmation -->
+            <div id="confirmation" class="step-content">
+                <div class="onboarding-card" style="text-align: center;">
+                    <div
+                        style="width: 80px; height: 80px; background: #e8f5e9; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-check fa-3x"></i>
+                    </div>
+                    <h2>Impact Confirmed!</h2>
+                    <p class="impact-display">Your donation is on its way.</p>
+
+                    <div
+                        style="background: #f5f5f5; padding: 20px; border-radius: 8px; text-align: left; margin: 30px 0;">
+                        <h4 style="margin-top: 0;">What Happens Next:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                    style="color: #2e7d32; margin-right: 10px;"></i> <strong>Day 1:</strong> Funds
+                                converted
+                                & sent</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                    style="color: #2e7d32; margin-right: 10px;"></i> <strong>Day 3:</strong> Supplies
+                                ordered</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                    style="color: #2e7d32; margin-right: 10px;"></i> <strong>Day 7:</strong> Delivery to
+                                Gaza</li>
+                        </ul>
+                    </div>
+
+                    <a href="index.html" class="btn-primary"
+                        style="text-decoration: none; display: inline-block;">Return
+                        Home</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // State
+        let currentStep = 1;
+        let selectedAmount = 50;
+
+        // Elements
+        const slider = document.getElementById('amount-slider');
+        const amountDisplay = document.getElementById('amount-display');
+        const impactText = document.getElementById('impact-text');
+
+        // Impact Logic
+        function updateImpact(val) {
+            selectedAmount = val;
+            amountDisplay.innerText = val;
+            slider.value = val;
+
+            let impact = "";
+            if (val < 100) impact = "Feed " + Math.floor(val / 50) + " family for a month";
+            else if (val < 300) impact = "Provide essential medical supplies";
+            else if (val < 1000) impact = "Clear rubble from a family home";
+            else impact = "Healthcare for " + Math.floor(val / 40) + " people";
+
+            impactText.innerText = impact;
+
+            // Update cards visual state
+            document.querySelectorAll('#step1 .selection-card').forEach(card => {
+                card.classList.remove('selected');
+                const cardVal = card.querySelector('h3').innerText.replace('$', '').replace(',', '');
+                if (parseInt(cardVal) == val) card.classList.add('selected');
+            });
+        }
+
+        slider.addEventListener('input', (e) => {
+            updateImpact(e.target.value);
+        });
+
+        function selectAmount(amount, text) {
+            updateImpact(amount);
+        }
+
+        function selectIdentity(type) {
+            document.querySelectorAll('#step2 .selection-card').forEach(c => c.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+        }
+
+        function nextStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            // Show target step
+            document.getElementById('step' + step).classList.add('active');
+
+            // Update dots
+            document.querySelectorAll('.step-dot').forEach(dot => {
+                const s = parseInt(dot.getAttribute('data-step'));
+                dot.classList.remove('active', 'completed');
+                if (s === step) dot.classList.add('active');
+                if (s < step) dot.classList.add('completed');
+            });
+
+            currentStep = step;
+        }
+
+        async function processPayment(method) {
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('http://localhost:3005/api/payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: selectedAmount,
+                        currency: 'usd',
+                        order_description: `Donation of $${selectedAmount} to Gaza`
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Success
+                    document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+                    document.getElementById('confirmation').classList.add('active');
+                    document.querySelector('.progress-track').style.display = 'none';
+
+                    // Update confirmation details
+                    document.querySelector('#confirmation .impact-display').innerHTML = `
+                        Please send <strong>${data.pay_amount} ${data.pay_currency.toUpperCase()}</strong><br>
+                        to address: 
+                        <div style="font-size:0.8em; word-break:break-all; background:#eee; padding:10px; border-radius:8px; margin:10px 0; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                            <span id="wallet-address">${data.pay_address}</span>
+                            <button onclick="copyAddress(this)" style="background:none; border:none; cursor:pointer; color:#d32f2f; padding:5px;" title="Copy to clipboard">
+                                <i class="fas fa-copy fa-lg"></i>
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    throw new Error(data.error || 'Payment failed');
+                }
+            } catch (error) {
+                alert('Payment initialization failed: ' + error.message + '\n\nPlease try again for the sake of the people of Gaza.');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        function copyAddress(btn) {
+            const addressText = document.getElementById('wallet-address').innerText;
+            navigator.clipboard.writeText(addressText).then(() => {
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    btn.innerHTML = originalIcon;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy address');
+            });
+        }
+
+        // Init
+        updateImpact(50);
+    </script>
+</body>
+
+</html>
