@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -14,8 +15,9 @@ const NOWPAYMENTS_API_KEY = process.env.NOWPAYMENTS_API_KEY;
 const NOWPAYMENTS_API_URL = 'https://api.nowpayments.io/v1';
 
 app.get('/', (req, res) => {
-    res.send('API running on Vercel 🚀');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 app.post('/api/payment', async (req, res) => {
     try {
