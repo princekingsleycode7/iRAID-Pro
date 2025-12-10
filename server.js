@@ -4,12 +4,14 @@ const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
-const PORT = 3005;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname)); // Serve static files from root
 
-const NOWPAYMENTS_API_KEY = process.env.NOWPAYMENTS_API_KEY || 'V1K67ZC-7BS4JZZ-PVY3TBB-7DR5G5Z'; // Fallback for testing if env not set
+
+const NOWPAYMENTS_API_KEY = process.env.NOWPAYMENTS_API_KEY   // Fallback for testing if env not set
 const NOWPAYMENTS_API_URL = 'https://api.nowpayments.io/v1';
 
 app.post('/api/payment', async (req, res) => {
