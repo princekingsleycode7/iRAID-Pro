@@ -2,15 +2,25 @@
   "version": 2,
   "builds": [
     { "src": "server.js", "use": "@vercel/node" },
+
+    { "src": "*.html", "use": "@vercel/static" },
     { "src": "**/*.html", "use": "@vercel/static" },
-    { "src": "themes/**/*.css", "use": "@vercel/static" },
-    { "src": "themes/**/*.js", "use": "@vercel/static" },
-    { "src": "concrete/**/*.css", "use": "@vercel/static" },
-    { "src": "concrete/**/*.js", "use": "@vercel/static" },
+
     { "src": "js/**/*.js", "use": "@vercel/static" },
-    { "src": "files/**/*", "use": "@vercel/static" }
+    { "src": "concrete/**/*.js", "use": "@vercel/static" },
+    { "src": "themes/**/*.js", "use": "@vercel/static" },
+
+    { "src": "styles/**/*.css", "use": "@vercel/static" },
+    { "src": "concrete/**/*.css", "use": "@vercel/static" },
+    { "src": "themes/**/*.css", "use": "@vercel/static" },
+
+    { "src": "themes/**/*", "use": "@vercel/static" },
+    { "src": "files/**/*", "use": "@vercel/static" },
+    { "src": "supports-us/**/*", "use": "@vercel/static" },
+    { "src": "signals/**/*", "use": "@vercel/static" },
+    { "src": "about/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "server.js" }
+    { "src": "/api/(.*)", "dest": "/server.js" }
   ]
 }
