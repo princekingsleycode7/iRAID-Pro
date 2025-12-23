@@ -1,0 +1,140 @@
+/* Image Container with Overlay Styles */
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-overlay img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay Content */
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 2;
+}
+
+.overlay-content p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+/* FAQ Button Styles */
+.faq-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-button:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.faq-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #333;
+  transition: fill 0.3s ease;
+}
+
+.faq-button:hover svg {
+  fill: #000;
+}
+
+/* Show overlay when button is hovered */
+.faq-button:hover ~ .overlay-content,
+.overlay-content:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.faq-button:hover ~ .overlay-content p,
+.overlay-content:hover p {
+  transform: translateY(0);
+}
+
+/* Alternative: If button is inside a wrapper */
+.img-overlay:has(.faq-button:hover) .overlay-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.img-overlay:has(.faq-button:hover) .overlay-content p {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faq-button {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .faq-button svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .overlay-content {
+    padding: 15px;
+  }
+  
+  .overlay-content p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-button {
+    width: 35px;
+    height: 35px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .faq-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .overlay-content p {
+    font-size: 12px;
+  }
+}
