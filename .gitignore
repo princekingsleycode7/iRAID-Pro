@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+Thumbs.db
+optimize-images.js
+package-lock.json
+package.json
+server/node_modules/
+.gemini/
+.agents/
+agent/
+_agents/
+_agent/
+brain/

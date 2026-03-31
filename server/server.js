@@ -2,11 +2,28 @@ const express = require('express');
 const { Resend } = require('resend');
 const cors = require('cors');
 require('dotenv').config();
+<<<<<<< HEAD
+=======
+const rateLimit = require('express-rate-limit');
+
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5,
+  message: { message: 'Too many requests. Please try again later.' }
+});
+
+const newsletterLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 3,
+  message: { message: 'Too many subscription attempts. Please try again later.' }
+});
+>>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
 
 const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middleware
+<<<<<<< HEAD
 app.use(cors());
 app.use(express.json());
 
@@ -14,6 +31,37 @@ app.use(express.json());
 app.post('/api/contact', async (req, res) => {
   const { name, email, number, message } = req.body;
 
+=======
+const allowedOrigins = [
+  'https://iraid.com.ng', 'https://iraidng.vercel.app',// replace with actual production domain
+  'http://localhost:3000'
+];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+app.use(express.json());
+
+// Contact form endpoint
+app.post('/api/contact', contactLimiter, async (req, res) => {
+  const { name, email, number, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: 'Name, email, and message are required.' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ message: 'Invalid email address.' });
+  }
+  if (name.length > 100 || message.length > 2000) {
+    return res.status(400).json({ message: 'Input exceeds allowed length.' });
+  }
+
+>>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev',
@@ -37,9 +85,19 @@ app.post('/api/contact', async (req, res) => {
 });
 
 // Newsletter subscription endpoint
+<<<<<<< HEAD
 app.post('/api/newsletter', async (req, res) => {
   const { email } = req.body;
 
+=======
+app.post('/api/newsletter', newsletterLimiter, async (req, res) => {
+  const { email } = req.body;
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ message: 'A valid email address is required.' });
+  }
+
+>>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev',

@@ -919,6 +919,7 @@
     });
 
     // /*----------- 00.Color Scheme ----------*/
+<<<<<<< HEAD
     $('.color-switch-btns button').each(function () {
         // Get color for button
         const button = $(this);
@@ -948,6 +949,13 @@
             $(':root').css('--theme-color2', clickedColor);
         });
     });
+=======
+
+
+
+
+
+>>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
 
     /*----------- Count pricing ----------*/
     $(document).on('click', '.donate-amount-button-list li', function() {
@@ -1033,6 +1041,7 @@
 
 
     $(".circle-title-anime").lettering();
+<<<<<<< HEAD
     
     /*----------- 00. Right Click Disable ----------*/
       window.addEventListener('contextmenu', function (e) {
@@ -1058,6 +1067,9 @@
           return false;
         }
       }
+=======
+
+>>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
     
 })(jQuery);
 
@@ -1068,3 +1080,7 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
