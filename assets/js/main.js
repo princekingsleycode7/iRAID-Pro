@@ -919,43 +919,11 @@
     });
 
     // /*----------- 00.Color Scheme ----------*/
-<<<<<<< HEAD
-    $('.color-switch-btns button').each(function () {
-        // Get color for button
-        const button = $(this);
-        const color = button.data('color');
-        button.css('--theme-color', color);
-
-        // Change theme color on click
-        button.on('click', function () {
-            const clickedColor = $(this).data('color');
-            $(':root').css('--theme-color', clickedColor);
-        });
-    });
-
-    $(document).on('click','.switchIcon',function() {
-        $('.color-scheme-wrap').toggleClass('active');
-    });
-
-    $('.secondary-color-switch-btns button').each(function () {
-        // Get color for button
-        const button = $(this);
-        const color = button.data('secondary-color');
-        button.css('--theme-color2', color);
-
-        // Change theme color on click
-        button.on('click', function () {
-            const clickedColor = $(this).data('secondary-color');
-            $(':root').css('--theme-color2', clickedColor);
-        });
-    });
-=======
 
 
 
 
 
->>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
 
     /*----------- Count pricing ----------*/
     $(document).on('click', '.donate-amount-button-list li', function() {
@@ -1041,35 +1009,6 @@
 
 
     $(".circle-title-anime").lettering();
-<<<<<<< HEAD
-    
-    /*----------- 00. Right Click Disable ----------*/
-      window.addEventListener('contextmenu', function (e) {
-        // do something here...
-        e.preventDefault();
-      }, false);
-
-    /*----------- 00. Inspect Element Disable ----------*/
-      document.onkeydown = function (e) {
-        if (event.keyCode == 123) {
-          return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-          return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-          return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-          return false;
-        }
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-          return false;
-        }
-      }
-=======
-
->>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
     
 })(jQuery);
 
@@ -1080,7 +1019,3 @@
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a6789a (Initial commit of optimized IRAID platform)
